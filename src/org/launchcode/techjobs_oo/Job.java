@@ -33,6 +33,55 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    //toString method
+    public String toString () {
+        String defaultString = "Data not available";
+        String nameValue;
+        String employerValue;
+        String locationValue;
+        String positionTypeValue;
+        String coreCompetencyValue;
+
+        if (this.name == null) {
+            nameValue = defaultString;
+        } else {
+            nameValue = this.name;
+        }
+
+        if (this.employer == null) {
+            employerValue = defaultString;
+        } else {
+            employerValue = this.employer.toString();
+        }
+
+        if (this.location == null) {
+            locationValue = defaultString;
+        } else {
+            locationValue = this.location.toString();
+        }
+
+        if (this.positionType == null) {
+            positionTypeValue = defaultString;
+        } else {
+            positionTypeValue = this.positionType.toString();
+        }
+
+        if (this.coreCompetency == null) {
+            coreCompetencyValue = defaultString;
+        } else {
+            coreCompetencyValue = this.coreCompetency.toString();
+        }
+
+        return "\n" +
+                "ID: " + this.id + "\n" +
+                "Name: " + nameValue + "\n" +
+                "Employer: " + employerValue + "\n" +
+                "Location: " + locationValue + "\n" +
+                "Position Type: " + positionTypeValue + "\n" +
+                "Core Competency: " + coreCompetencyValue + "\n\n";
+
+    }
+
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -95,4 +144,5 @@ public class Job {
     public int hashCode() {
         return Objects.hash(getId());
     }
+
 }

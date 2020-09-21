@@ -51,4 +51,30 @@ public class JobTest {
         assertFalse(firstAllFieldsJob.equals(secondAllFieldsJob));
     }
 
+    @Test
+    public void testToStringMethod () {
+        Job toStringJob;
+        toStringJob = new Job("Product Tester", new Employer("ACME"), new Location ("Desert"), new PositionType("Quality Control"), new CoreCompetency("Persistence"));
+        assertEquals("\n" +
+                "ID: " + toStringJob.getId() + "\n" +
+                "Name: " + toStringJob.getName() + "\n" +
+                "Employer: " + toStringJob.getEmployer().getValue() + "\n" +
+                "Location: " + toStringJob.getLocation().getValue() + "\n" +
+                "Position Type: " + toStringJob.getPositionType().getValue() + "\n" +
+                "Core Competency: " + toStringJob.getCoreCompetency().getValue() + "\n\n", toStringJob.toString());
+    }
+
+    @Test
+    public void testEmptyValueToStringMethod() {
+        Job toStringJob;
+        toStringJob = new Job();
+        assertEquals("\n" +
+                "ID: " + toStringJob.getId() + "\n" +
+                "Name: Data not available\n" +
+                "Employer: Data not available\n" +
+                "Location: Data not available\n" +
+                "Position Type: Data not available\n" +
+                "Core Competency: Data not available\n\n", toStringJob.toString());
+    }
+
 }
