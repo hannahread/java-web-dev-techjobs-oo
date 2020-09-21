@@ -42,31 +42,31 @@ public class Job {
         String positionTypeValue;
         String coreCompetencyValue;
 
-        if (this.name == null) {
+        if (this.name == null || this.name == "") {
             nameValue = defaultString;
         } else {
             nameValue = this.name;
         }
 
-        if (this.employer == null) {
+        if (this.employer == null || this.employer.toString() == "") {
             employerValue = defaultString;
         } else {
             employerValue = this.employer.toString();
         }
 
-        if (this.location == null) {
+        if (this.location == null || this.location.toString() == "") {
             locationValue = defaultString;
         } else {
             locationValue = this.location.toString();
         }
 
-        if (this.positionType == null) {
+        if (this.positionType == null || this.positionType.toString() == "") {
             positionTypeValue = defaultString;
         } else {
             positionTypeValue = this.positionType.toString();
         }
 
-        if (this.coreCompetency == null) {
+        if (this.coreCompetency == null || this.coreCompetency.toString() == "") {
             coreCompetencyValue = defaultString;
         } else {
             coreCompetencyValue = this.coreCompetency.toString();
